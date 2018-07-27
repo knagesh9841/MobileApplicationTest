@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="FlipkartMobileAppTesting" duration-ms="64577" started-at="2018-07-27T18:36:58Z" finished-at="2018-07-27T18:38:03Z">
+    <groups>
+    </groups>
+    <test name="testngTest" duration-ms="64577" started-at="2018-07-27T18:36:58Z" finished-at="2018-07-27T18:38:03Z">
+      <class name="testCases.FlipkartAppTest">
+        <test-method status="PASS" signature="startReport()[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="startReport" is-config="true" duration-ms="247" started-at="2018-07-28T00:06:58Z" finished-at="2018-07-28T00:06:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReport -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="setUp" is-config="true" duration-ms="26102" started-at="2018-07-28T00:06:59Z" finished-at="2018-07-28T00:07:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginTestCase()[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="loginTestCase" duration-ms="23612" started-at="2018-07-28T00:07:25Z" finished-at="2018-07-28T00:07:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTestCase -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="getResult" is-config="true" duration-ms="1513" started-at="2018-07-28T00:07:48Z" finished-at="2018-07-28T00:07:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTestCase status=SUCCESS method=FlipkartAppTest.loginTestCase()[pri:0, instance:testCases.FlipkartAppTest@58651fd0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="notificationTabVerification()[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="notificationTabVerification" duration-ms="1413" started-at="2018-07-28T00:07:50Z" finished-at="2018-07-28T00:07:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notificationTabVerification -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="getResult" is-config="true" duration-ms="1547" started-at="2018-07-28T00:07:51Z" finished-at="2018-07-28T00:07:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=notificationTabVerification status=SUCCESS method=FlipkartAppTest.notificationTabVerification()[pri:0, instance:testCases.FlipkartAppTest@58651fd0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="cartTabVerification()[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="cartTabVerification" duration-ms="3377" started-at="2018-07-28T00:07:53Z" finished-at="2018-07-28T00:07:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cartTabVerification -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="getResult" is-config="true" duration-ms="847" started-at="2018-07-28T00:07:56Z" finished-at="2018-07-28T00:07:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cartTabVerification status=SUCCESS method=FlipkartAppTest.cartTabVerification()[pri:0, instance:testCases.FlipkartAppTest@58651fd0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="teardown" is-config="true" duration-ms="5513" started-at="2018-07-28T00:07:57Z" finished-at="2018-07-28T00:08:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:testCases.FlipkartAppTest@58651fd0]" name="endReport" is-config="true" duration-ms="394" started-at="2018-07-28T00:08:03Z" finished-at="2018-07-28T00:08:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- testCases.FlipkartAppTest -->
+    </test> <!-- testngTest -->
+  </suite> <!-- FlipkartMobileAppTesting -->
+</testng-results>

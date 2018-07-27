@@ -1,0 +1,7 @@
+<suite name="FlipkartMobileAppTesting">
+ <test name="testngTest">
+ <classes>
+ <class name="testCases.FlipkartAppTest" />
+ </classes>
+ </test>
+</suite>

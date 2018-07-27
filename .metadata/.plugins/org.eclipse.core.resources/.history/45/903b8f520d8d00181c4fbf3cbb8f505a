@@ -1,0 +1,10 @@
+package utility;
+
+import org.openqa.selenium.By;
+
+public class ObjectRepository {
+	
+	public static final By element_SignIn = By.id("com.flipkart.android:id/btn_mlogin");
+	public static final By element_Name = By.id("com.flipkart.android:id/mobileNo");
+
+}

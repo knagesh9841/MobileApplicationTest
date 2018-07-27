@@ -1,0 +1,6 @@
+utility\Log.class
+testCases\FlipkartAppTest.class
+utility\ObjectRepository.class
+utility\ScreenshotCapture.class
+utility\ClearMemoryOfAppllication.class
+utility\AppiumServerJava.class

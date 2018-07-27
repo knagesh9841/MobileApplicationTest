@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="3" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="63740" started-at="2018-07-26T17:45:44Z" finished-at="2018-07-26T17:46:48Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="63740" started-at="2018-07-26T17:45:44Z" finished-at="2018-07-26T17:46:48Z">
+      <class name="testCases.FlipkartAppTest">
+        <test-method status="PASS" signature="startReport()[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="startReport" is-config="true" duration-ms="259" started-at="2018-07-26T23:15:44Z" finished-at="2018-07-26T23:15:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReport -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="setUp" is-config="true" duration-ms="26019" started-at="2018-07-26T23:15:44Z" finished-at="2018-07-26T23:16:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginTestCase()[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="loginTestCase" duration-ms="23190" started-at="2018-07-26T23:16:10Z" finished-at="2018-07-26T23:16:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTestCase -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="getResult" is-config="true" duration-ms="1334" started-at="2018-07-26T23:16:34Z" finished-at="2018-07-26T23:16:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTestCase status=SUCCESS method=FlipkartAppTest.loginTestCase()[pri:0, instance:testCases.FlipkartAppTest@74e52303] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="FAIL" signature="notificationTabVerification()[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="notificationTabVerification" duration-ms="1893" started-at="2018-07-26T23:16:35Z" finished-at="2018-07-26T23:16:37Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Notifications] but found [Notifications (2)]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Notifications] but found [Notifications (2)]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at testCases.FlipkartAppTest.notificationTabVerification(FlipkartAppTest.java:214)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notificationTabVerification -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="getResult" is-config="true" duration-ms="973" started-at="2018-07-26T23:16:37Z" finished-at="2018-07-26T23:16:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=notificationTabVerification status=FAILURE method=FlipkartAppTest.notificationTabVerification()[pri:0, instance:testCases.FlipkartAppTest@74e52303] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="cartTabVerification()[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="cartTabVerification" duration-ms="2899" started-at="2018-07-26T23:16:38Z" finished-at="2018-07-26T23:16:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cartTabVerification -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="getResult" is-config="true" duration-ms="1006" started-at="2018-07-26T23:16:41Z" finished-at="2018-07-26T23:16:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cartTabVerification status=SUCCESS method=FlipkartAppTest.cartTabVerification()[pri:0, instance:testCases.FlipkartAppTest@74e52303] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="teardown" is-config="true" duration-ms="5652" started-at="2018-07-26T23:16:42Z" finished-at="2018-07-26T23:16:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:testCases.FlipkartAppTest@74e52303]" name="endReport" is-config="true" duration-ms="479" started-at="2018-07-26T23:16:47Z" finished-at="2018-07-26T23:16:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- testCases.FlipkartAppTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
