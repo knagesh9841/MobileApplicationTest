@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.apache.log4j.xml.DOMConfigurator;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -53,6 +54,8 @@ public class FlipkartAppTest {
 	SoftAssert softAssertion= new SoftAssert();
 
 	String userName,password,screenshotPath,version,deviceName,platform,uuid;
+	
+	JavascriptExecutor je = null;
 
 	ExtentHtmlReporter htmlReporter;
 	ExtentReports extent;
@@ -92,17 +95,17 @@ public class FlipkartAppTest {
 		if(result.getStatus() == ITestResult.FAILURE){
 			logger.log(Status.FAIL, "Test Case Failed is "+result.getName());
 			logger.log(Status.FAIL, "Test Case Failed is "+result.getThrowable());
-					
 			screenshotPath = ScreenshotCapture.getScreenshot(driver, result.getName());
 			logger.addScreenCaptureFromPath(screenshotPath);
+			
 			
 		}else if(result.getStatus() == ITestResult.SKIP){
 			logger.log(Status.SKIP, "Test Case Skipped is "+result.getName());
 		}else if(result.getStatus() == 1)
 		{
-			screenshotPath = ScreenshotCapture.getScreenshot(driver, result.getName());
+
 			logger.log(Status.PASS, MarkupHelper.createLabel("Test Case Passed is "+result.getName()+"", ExtentColor.GREEN));
-			logger.addScreenCaptureFromPath(screenshotPath);
+		
 		}
 		
 	}
@@ -139,6 +142,7 @@ public class FlipkartAppTest {
 		Log.info("Capability set successfully");
 
 		driver = new AndroidDriver<WebElement>(new URL("http://"+AppiumServerJava.ipAddress+":4723/wd/hub"), capabilities);
+		
 
 	}
 
@@ -193,6 +197,9 @@ public class FlipkartAppTest {
 		
 		logger.log(Status.INFO, "Login is Successfull");
 		
+		screenshotPath = ScreenshotCapture.getScreenshot(driver, "loginTestCase");
+		logger.addScreenCaptureFromPath(screenshotPath);
+		
 		Log.endTestCase("Login Testcase Ended");
 
 
@@ -214,10 +221,18 @@ public class FlipkartAppTest {
 		Assert.assertEquals(notify.getText(), "Notifications");	
 		
 		logger.log(Status.INFO, "Notification Tab is opened Successfully");
+		
+		screenshotPath = ScreenshotCapture.getScreenshot(driver, "notificationTabVerification");
+		logger.addScreenCaptureFromPath(screenshotPath);
 
 		Log.endTestCase("Notification Tab Verification Testcase Ended");
 
-		driver.navigate().back();
+		WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+		
+		menu.click();
+		wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+		menu.click();
+		
 
 	}
 
@@ -231,66 +246,88 @@ public class FlipkartAppTest {
 		wait = new WebDriverWait(driver, 50);
 		WebElement cartverify = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_CartVerify));
 		cartverify.click();
-
+		
 		WebElement cart = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepository.element_Cart));
 
 		Assert.assertEquals(cart.getText(), "My Cart");
 		
 		logger.log(Status.INFO, "Cart Tab is opened Successfully");
+		
+		screenshotPath = ScreenshotCapture.getScreenshot(driver, "cartTabVerification");
+		logger.addScreenCaptureFromPath(screenshotPath);
 
 		Log.endTestCase("Cart Tab Verification Testcase Ended");
 
-		driver.navigate().back();
+		WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+		
+		menu.click();
 
 	}
 
 	@Test(priority=4)
-	public void myOrderVerify()
+	public void myFashion() throws Exception
 	{
-		Log.startTestCase("My Order Tab Verification Testcase Started");
+		Log.startTestCase("Fashion Tab Verification Testcase Started");
 		
-		logger = extent.createTest("My Order Tab Verification Testcase");
+		logger = extent.createTest("Fashion Tab Verification Testcase");
 
 		wait = new WebDriverWait(driver, 30);
 		boolean res=false;
 		WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
 		menu.click();
+		
 
 		wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_myAcct));
 		List<WebElement> myAcct = driver.findElements(ObjectRepository.element_myAcct);
 		for(int i=0;i<myAcct.size();i++)
 		{
 			myAcct.get(i).click();
+			
 
 			WebElement myOrder;
 			String sValue = "";
 			try {
-				myOrder = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepository.element_Notify));
+				myOrder = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepository.element_myOrder));
 				sValue = myOrder.getText();
 			} catch (Exception e) {
 
 			}
 
 
-			if(sValue.equals("My Orders"))
+			if(sValue.equals("Fashion"))
 			{
 				res=true;
 				break;
 			}
-			driver.navigate().back();
+			
+			menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+			
 			menu.click();
+			
 		}
 
+		
 		Assert.assertTrue(res);
 		
-		logger.log(Status.INFO, "My Order Tab is opened Successfully");
+		screenshotPath = ScreenshotCapture.getScreenshot(driver, "myFashion");
+		logger.addScreenCaptureFromPath(screenshotPath);
+		
+		logger.log(Status.INFO, "Fashion Tab is opened Successfully");
+		
+		menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+		
+		menu.click();
+		
+		menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+		
+		menu.click();
 
-		Log.endTestCase("My Order Tab Verification Testcase Ended");
+		Log.endTestCase("Fashion Tab Verification Testcase Ended");
 
 	}
 
 	@Test(priority=5)
-	public void verifyElectrMenu()
+	public void verifyElectrMenu () throws Exception
 	{
 
 		Log.startTestCase("Electronics Tab Verification Testcase Started");
@@ -301,13 +338,13 @@ public class FlipkartAppTest {
 		boolean res=false;
 		WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
 		menu.click();
-
+		
 		wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_myAcct));
 		List<WebElement> myAcct = driver.findElements(ObjectRepository.element_myAcct);
 		for(int i=0;i<myAcct.size();i++)
 		{
 			myAcct.get(i).click();
-
+			
 			WebElement myOrder;
 			String sValue = "";
 			try {
@@ -323,12 +360,18 @@ public class FlipkartAppTest {
 				res=true;
 				break;
 			}
-			driver.navigate().back();
+			menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+			
 			menu.click();
+			
 		}
 
 		Assert.assertTrue(res);	
 		logger.log(Status.INFO, "Electronics Tab is opened Successfully");
+
+
+		screenshotPath = ScreenshotCapture.getScreenshot(driver, "verifyElectrMenu");
+		logger.addScreenCaptureFromPath(screenshotPath);
 
 		List<WebElement> subMenu = driver.findElements(ObjectRepository.element_subMenu);
 
@@ -338,17 +381,28 @@ public class FlipkartAppTest {
 		{
 			logger.log(Status.INFO, "SubMenu:-"+subMenu.get(i).getText());
 		}
+		
+		
+		menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+		
+		menu.click();
+		
+		menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+		
+		menu.click();
+		
+		
 
 		Log.endTestCase("Electronics Tab Verification Testcase Ended");
 
 	}
 
 	@Test(priority=6)
-	public void verifyMyAccount()
+	public void verifyHomeandFurniture() throws Exception
 	{
-		Log.startTestCase("My Account Tab Verification Testcase Started");
+		Log.startTestCase("Home and Furniture Tab Verification Testcase Started");
 		
-		logger = extent.createTest("My Account Tab Verification Testcase");
+		logger = extent.createTest("Home and Furniture Tab Verification Testcase");
 
 		wait = new WebDriverWait(driver, 30);
 		boolean res=false;
@@ -360,31 +414,43 @@ public class FlipkartAppTest {
 		for(int i=0;i<myAcct.size();i++)
 		{
 			myAcct.get(i).click();
-
+			
 			WebElement myOrder;
 			String sValue = "";
 			try {
-				myOrder = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepository.element_Cart));
+				myOrder = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepository.element_myOrder));
 				sValue = myOrder.getText();
 			} catch (Exception e) {
 
 			}
 
 
-			if(sValue.equals("My Account"))
+			if(sValue.equals("Home and Furniture"))
 			{
 				res=true;
 				break;
 			}
-			driver.navigate().back();
+			menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
 			menu.click();
+			
 		}
 
 		Assert.assertTrue(res);
 		
-		logger.log(Status.INFO, "My Account Tab is opened Successfully");
+		logger.log(Status.INFO, "Home and Furniture Tab is opened Successfully");
 		
-		Log.endTestCase("My Account Tab Verification Testcase Ended");
+		screenshotPath = ScreenshotCapture.getScreenshot(driver, "verifyHomeandFurniture");
+		logger.addScreenCaptureFromPath(screenshotPath);
+		
+		menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+		
+		menu.click();
+		
+		menu = wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
+		
+		menu.click();
+		
+		Log.endTestCase("Home and Furniture Tab Verification Testcase Ended");
 
 	}
 
