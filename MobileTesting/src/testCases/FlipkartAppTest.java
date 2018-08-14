@@ -69,7 +69,7 @@ public class FlipkartAppTest {
 	@BeforeTest
 	public void startReport(){
 		
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/FlipkartMobileApplicationTest.html");
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"\\test-output\\FlipkartMobileApplicationTest.html");
 		extent = new ExtentReports ();
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("Host Name","XPANXIONQAEssentials");
