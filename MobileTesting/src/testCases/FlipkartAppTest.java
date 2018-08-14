@@ -218,7 +218,7 @@ public class FlipkartAppTest {
 
 		WebElement notify = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepository.element_Notify));
 
-		Assert.assertEquals(notify.getText(), "Notifications");	
+		Assert.assertEquals(notify.getText(), "Notifications (2)");	
 		
 		logger.log(Status.INFO, "Notification Tab is opened Successfully");
 		
