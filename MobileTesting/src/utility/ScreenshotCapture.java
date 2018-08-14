@@ -19,7 +19,7 @@ public class ScreenshotCapture {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		//after execution, you could see a folder "FailedTestsScreenshots" under src folder
-		String destination = System.getProperty("user.dir") + "/Screenshots/"+screenshotName+dateName+".png";
+		String destination = System.getProperty("user.dir") + "/Screenshots/"+screenshotName+dateName+".jpg";
 		File finalDestination = new File(destination);
 		FileUtils.copyFile(source, finalDestination);
 		//Returns the captured file path
