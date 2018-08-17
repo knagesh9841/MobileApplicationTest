@@ -279,7 +279,7 @@ public class FlipkartAppTest {
 
 		wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_myAcct));
 		List<WebElement> myAcct = driver.findElements(ObjectRepository.element_myAcct);
-		for(int i=0;i<myAcct.size();i++)
+		for(int i=1;i<myAcct.size();i++)
 		{
 			myAcct.get(i).click();
 			
@@ -341,7 +341,7 @@ public class FlipkartAppTest {
 		
 		wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_myAcct));
 		List<WebElement> myAcct = driver.findElements(ObjectRepository.element_myAcct);
-		for(int i=0;i<myAcct.size();i++)
+		for(int i=1;i<myAcct.size();i++)
 		{
 			myAcct.get(i).click();
 			
@@ -411,7 +411,7 @@ public class FlipkartAppTest {
 
 		wait.until(ExpectedConditions.elementToBeClickable(ObjectRepository.element_menu));
 		List<WebElement> myAcct = driver.findElements(ObjectRepository.element_myAcct);
-		for(int i=0;i<myAcct.size();i++)
+		for(int i=1;i<myAcct.size();i++)
 		{
 			myAcct.get(i).click();
 			
